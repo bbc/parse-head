@@ -1,0 +1,31 @@
+{
+  "name": "parse-head",
+  "version": "1.0.0",
+  "description": "Get a JSON representation of the <head> of a streamed HTML content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bbcrd/parse-head.git"
+  },
+  "keywords": [
+    "json",
+    "stream",
+    "html",
+    "head",
+    "parser"
+  ],
+  "author": "Thomas Parisot (https://oncletom.io)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "trumpet": "^1.7.2"
+  },
+  "devDependencies": {
+    "blue-tape": "^0.2.0"
+  }
+}
