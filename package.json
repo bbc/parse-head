@@ -1,6 +1,6 @@
 {
   "name": "parse-head",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get a JSON representation of the <head> of a streamed HTML content.",
   "main": "index.js",
   "bin": "./bin/cli.js",
