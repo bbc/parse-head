@@ -17,7 +17,19 @@ const fs = require('fs');
 parse(fs.createReadStream('some/file.html')).then(tags => {
   // ...
 });
+```
 
+It happens `Buffer` and `string` values are accepted as well:
+
+```js
+const parse = require('parse-head');
+const fs = require('fs');
+
+fs.readFile('some/file.html', (err, buf) => {
+  parse(buf).then(tags => {
+    // ...
+  });
+});
 ```
 
 ## Command line

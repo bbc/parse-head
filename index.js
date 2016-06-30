@@ -3,7 +3,7 @@
 const trumpet = require('trumpet');
 const DEFAULT_SELECT_TAGS = ['base', 'link', 'meta', 'title'/*, 'style', 'script', 'noscript''*/];
 
-module.exports = function parseHead (stream) {
+module.exports = function parseHead (input) {
   const parser = trumpet();
 
   return new Promise((resolve, reject) => {
@@ -27,6 +27,13 @@ module.exports = function parseHead (stream) {
 
     parser.on('end', () => Promise.all(tags).then(resolve, reject));
     parser.on('error', err => reject(err));
-    stream.pipe(parser);
+
+    if (Buffer.isBuffer(input) || typeof input === 'string') {
+      parser.write(input);
+      parser.end();
+    }
+    else {
+      input.pipe(parser);
+    }
   });
 };

@@ -20,3 +20,33 @@ test('retrieve page title as well', t => {
     t.ok(elements.find(d => d.nodeName === 'TITLE' && d.innerText.match(/^YouTuber/)));
   });
 });
+
+test('works with buffer input', t => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(`${__dirname}/fixtures/sample.html`, (err, buf) => {
+      if (err) {
+        return reject(err);
+      }
+
+      parse(buf).then(elements => {
+        t.equal(elements.length, 31);
+        resolve()
+      }, reject);
+    });
+  });
+});
+
+test('works with string input', t => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(`${__dirname}/fixtures/sample.html`, (err, buf) => {
+      if (err) {
+        return reject(err);
+      }
+
+      parse(String(buf)).then(elements => {
+        t.equal(elements.length, 31);
+        resolve()
+      }, reject);
+    });
+  });
+});
