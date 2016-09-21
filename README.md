@@ -1,4 +1,4 @@
-# parse-head [![Build Status](https://travis-ci.org/bbcrd/parse-head.svg?branch=master)](https://travis-ci.org/bbcrd/parse-head)
+# parse-head [![Build Status](https://travis-ci.org/bbc/parse-head.svg?branch=master)](https://travis-ci.org/bbc/parse-head)
 
 > A promise to fetch the `base`, `title`, `link` and `meta` tags out of a Node stream.
 
